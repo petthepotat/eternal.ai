@@ -1,0 +1,112 @@
+
+.NavbarStyles{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1rem 2rem;
+    background-color: #ffffff;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.3);
+}
+
+.NavbarBrandStyles{
+
+}
+
+.NavbarBrandStyles.img {
+    height: 3rem;
+}
+
+
+.NavbarEndStyles{
+    display: flex;
+align-items: center;
+}
+
+.NavbarEndStyles.button {
+    background-color: #333333;
+    color: #ffffff;
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
+    text-transform: uppercase;
+    font-weight: bold;
+}
+
+.NavbarEndStyles.button:hover {
+    background-color: #000000;
+}
+
+
+.NavbarItemStyles {
+    color: #333333;
+    text-decoration: none;
+    margin-right: 1rem;
+}
+
+.NavbarItemStyles:hover {
+    color: #333333;
+}
+
+/* Theme stuff */
+
+.TwixtorText {
+    display: flexbox;
+    padding: 2rem 1rem;
+    align-content: center;
+    align-items: center;
+    font-family: 'Ubuntu Mono', monospace;
+}
+
+.TwixtorIcon {
+    width: 10rem;
+}
+
+.TwixtorBackground {
+    position: relative;
+}
+
+.TwixtorBackgroundImage{
+    width: 100%;
+    position: relative;
+}
+
+.TwixtorCard {
+    padding: 1rem 1.2rem;
+    border-radius: var(--border-radius);
+    background: rgba(var(--card-rgb), 0);
+    border: 1px solid rgba(var(--card-border-rgb), 0);
+    transition: background 200ms, border 200ms;
+}
+
+/* The main section / content */
+
+.ContentBase {
+    offset: 100 100;
+}
+
+.ContentData {
+    position:inherit;
+}
+
+
+.SubsectionStyles {
+  margin: 2rem 0;
+}
+
+.SubsectionStyles.h2{
+font-size: 2rem;
+margin-bottom: 1rem;
+}
+
+.SubsectionStyles.p {
+font-size: 1.5rem;
+line-height: 1.5;
+}
+
+
+.SignUpButton {
+    background-color: #00FFFF; 
+    color: #000000; 
+    padding: 0.5rem 1rem; 
+    border-radius: 4px;
+}
+
