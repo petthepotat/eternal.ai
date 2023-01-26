@@ -84,7 +84,9 @@ align-items: center;
 }
 
 .ContentData {
-    position:inherit;
+    position: relative;
+    /* top: -200px; */
+    transform: translate(0, -100px);
 }
 
 
