@@ -6,7 +6,7 @@ import mainstyle from '../styles/twixtor.module.css';
 
 
 
-const TwixtorAI: React.FunctionComponent = () => {
+const EternalAI: React.FunctionComponent = () => {
   const [isActive, setIsActive] = useState(false);
 
   const generateTwixtor = () => {
@@ -37,7 +37,7 @@ const TwixtorAI: React.FunctionComponent = () => {
   return (
     <div>
       <Head>
-        <title>Twixtor.AI</title>
+        <title>Eternal.AI</title>
         <link rel="preconnect" href="https://fonts.googleapis.com"></link>
         <link rel="preconnect" href="https://fonts.gstatic.com"></link>
         <link href="https://fonts.googleapis.com/css2?family=Ubuntu+Mono&display=swap" rel="stylesheet"></link>
@@ -59,7 +59,7 @@ const TwixtorAI: React.FunctionComponent = () => {
           <a className={mainstyle.NavbarItemStyles} href="#">Login</a>
           <a className={mainstyle.NavbarItemStyles} href="#">
             <button className={`${mainstyle.NavbarButton} ${mainstyle.TwixtorText}`} onClick={() => {generateTwixtor();}}>
-            Generate Twixtor
+            Generate Eternal
           </button>
           </a>
         </div>
@@ -73,10 +73,10 @@ const TwixtorAI: React.FunctionComponent = () => {
             {/* title for page */}
             <div className={mainstyle.ContentGutterSpacing}>
               <h1 className={`${mainstyle.TwixtorText} ${mainstyle.TwixtorTitle} ${mainstyle.TwixtorMainTitle}`}>
-                Twixtor.AI
+                Eternal.AI
               </h1>
               <h2 className={`${mainstyle.TwixtorText} ${mainstyle.TwixtorTitle} ${mainstyle.TwixtorMainDescriptionText}`}>
-                Welcome to the Twixtor.AI website. Here you can generate Twixtor images and videos.
+                Welcome to the Eternal.AI website. Here you can generate interpolated videos for your favorite clips!
               </h2>
             </div>
         </div>
@@ -86,7 +86,7 @@ const TwixtorAI: React.FunctionComponent = () => {
         <div className={mainstyle.ContentBase}>
             <div className={`${mainstyle.TwixtorText} ${styles.grid}`}>
                 <section className={`${mainstyle.SubsectionStyles} ${styles.card}`}>
-                    <h2>Twixtor.AI</h2>
+                    <h2>Eternal.AI</h2>
                     <p>A small program designed by two high school students! You input your video, we give you higher fps, slow-mo, interpolated...</p>
                     <p><br></br></p>
                     <p>(the list goes on)</p>
@@ -140,7 +140,7 @@ const TwixtorAI: React.FunctionComponent = () => {
         <div className={mainstyle.SignUpBase}>
           
           <h2 className={`${mainstyle.TwixtorText} ${mainstyle.SignUpContent}`}>
-            Sign up for Twixtor.AI
+            Sign up for an Eternal.AI subscription
           </h2>
           
           <button className={mainstyle.SignUpButton}>
@@ -158,15 +158,14 @@ const TwixtorAI: React.FunctionComponent = () => {
 
 
 
-TwixtorAI.getInitialProps = async (context) => {
-  // Fetch data here and return it as an object
+// EternalAI.getInitialProps = async (ctx) => {
+//   // Fetch data here and return it as an object
+
+//   return { ctx }
+// }
 
 
-  return { context }
-}
-
-
-export default TwixtorAI;
+export default EternalAI;
 
 
 
