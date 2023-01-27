@@ -21,18 +21,23 @@ const TwixtorAI: React.FunctionComponent = () => {
         <link rel="preconnect" href="https://fonts.googleapis.com"></link>
         <link rel="preconnect" href="https://fonts.gstatic.com"></link>
         <link href="https://fonts.googleapis.com/css2?family=Ubuntu+Mono&display=swap" rel="stylesheet"></link>
+        <link rel="preconnect" href="https://fonts.googleapis.com"></link>
+        <link rel="preconnect" href="https://fonts.gstatic.com"></link>
+        <link href="https://fonts.googleapis.com/css2?family=Fira+Mono:wght@700&family=Ubuntu+Mono&display=swap" rel="stylesheet"></link>
       </Head>
       <nav className={mainstyle.NavbarStyles}>
         <div className={mainstyle.TwixtorIcon}>
           <img src="/favicon.ico" height={50} alt="Twixtor.AI logo" />
         </div>
-        <div className={mainstyle.NavbarEndStyles, mainstyle.TwixtorText}>
+        <div className={`${mainstyle.NavbarEndStyles} ${mainstyle.TwixtorText}`}>
           <a className={mainstyle.NavbarItemStyles} href="#">Home</a>
           <a className={mainstyle.NavbarItemStyles} href="#">Sign in</a>
           <a className={mainstyle.NavbarItemStyles} href="#">Login</a>
-          <button className={mainstyle.NavbarItemStyles} onClick={() => {generateTwixtor();}}>
+          <a className={mainstyle.NavbarItemStyles} href="#">
+            <button className={`${mainstyle.NavbarButton} ${mainstyle.TwixtorText}`} onClick={() => {generateTwixtor();}}>
             Generate Twixtor
           </button>
+          </a>
         </div>
       </nav>
       <main>
@@ -41,7 +46,9 @@ const TwixtorAI: React.FunctionComponent = () => {
             <img src="background.gif" className={mainstyle.TwixtorBackgroundImage}/>
             {/* title for page */}
             <div className={mainstyle.ContentGutterSpacing}>
-              <h1 className={`${mainstyle.TwixtorText} ${mainstyle.TwixtorTitle} ${mainstyle.TwixtorMainTitle}`}>Title</h1>
+              <h1 className={`${mainstyle.TwixtorText} ${mainstyle.TwixtorTitle} ${mainstyle.TwixtorMainTitle}`}>
+                Twixtor.AI
+              </h1>
               <h2 className={`${mainstyle.TwixtorText} ${mainstyle.TwixtorTitle} ${mainstyle.TwixtorMainDescriptionText}`}>
                 Welcome to the Twixtor.AI website. Here you can generate Twixtor images and videos.
               </h2>

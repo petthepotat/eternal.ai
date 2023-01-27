@@ -3,7 +3,7 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 1rem 2rem;
+    padding: 1rem 1rem;
     background-color: #ffffff;
     box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.3);
 }
@@ -19,38 +19,46 @@
 
 .NavbarEndStyles{
     display: flex;
-align-items: center;
+    align-items: center;
 }
 
 .NavbarEndStyles.button {
     background-color: #333333;
     color: #ffffff;
-    padding: 0.5rem 1rem;
+    padding: 0.5rem 0.1rem;
     border-radius: 4px;
     text-transform: uppercase;
     font-weight: bold;
 }
 
 .NavbarEndStyles.button:hover {
-    background-color: #000000;
+    background-color: rgb(0, 0, 0, 0.2);
 }
 
 
 .NavbarItemStyles {
     color: #333333;
-    text-decoration: none;
-    margin-right: 1rem;
+    /* text-decoration: none; */
+    margin: 10px;
+    /* padding: 2rem rem; */
+    /* border-radius: 20%; */
+    border-radius: 20px;
 }
 
 .NavbarItemStyles:hover {
     color: #333333;
 }
 
+.NavbarItemStyles:hover::after {
+    color: black
+}
+
+
 /* Theme stuff */
 
 .TwixtorText {
     display: flexbox;
-    padding: 2rem 1rem;
+    padding: 1rem;
     align-content: center;
     align-items: center;
     font-family: 'Ubuntu Mono', monospace;
@@ -63,12 +71,15 @@ align-items: center;
     border: black;
 }
 
+
+
 .TwixtorMainTitle {
     position: relative;
     top: 150px;
     left: 30px;
     font-size: 50px;
     text-shadow: white;
+    font-family: 'Fira Mono', monospace;
 }
 
 .TwixtorMainDescriptionText {
