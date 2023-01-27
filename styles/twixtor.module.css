@@ -12,7 +12,7 @@
 
 }
 
-.NavbarBrandStyles.img {
+.NavbarBrandStyles img {
     height: 3rem;
 }
 
@@ -22,19 +22,20 @@
     align-items: center;
 }
 
-.NavbarEndStyles.button {
-    background-color: #333333;
+.NavbarEndStyles button {
+    background-color: #005073;
     color: #ffffff;
     padding: 0.5rem 0.1rem;
+    padding-left: 1rem;
+    padding-right: 1rem;
     border-radius: 4px;
-    text-transform: uppercase;
+    /* text-transform: uppercase; */
     font-weight: bold;
 }
 
-.NavbarEndStyles.button:hover {
-    background-color: rgb(0, 0, 0, 0.2);
+.NavbarEndStyles button:hover {
+    background-color: #0077C4;
 }
-
 
 .NavbarItemStyles {
     color: #333333;
@@ -53,7 +54,6 @@
     color: black
 }
 
-
 /* Theme stuff */
 
 .TwixtorText {
@@ -70,8 +70,6 @@
     padding: 1rem 1rem;
     border: black;
 }
-
-
 
 .TwixtorMainTitle {
     position: relative;
@@ -122,7 +120,7 @@
 
 .ContentBase {
     position: relative;
-    top: -400px;
+    top: -500px;
     animation: card_scroll_up 20s cubic-bezier(0.1, 0.82, 0.9, 1);
 }
 
@@ -143,8 +141,96 @@
     
 }
 
+/*  sign up section */
+
+.PreSignUpMain {
+    position: relative;
+    padding-top: 1rem;
+    padding-bottom: 3rem;
+    top: -22rem;
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0) 0%, white 60%);
+}
+
+.SignUpBase {
+    width: 100%;
+    height: 30rem;
+    position: relative;
+    top: -20rem;
+    /* top: -10rem; */
+    /* z-index: 10; */
+    padding: 3rem;
+}
+
+.SignUpMainImage {
+    position: relative;
+    top: -30rem;
+    left: 0;
+    width: 100%;
+    z-index: 1;
+    animation: card_scroll_up 20s cubic-bezier(0.1, 0.82, 0.9, 1);
+}
+
+.SignupContent {
+    position: inherit;
+    top: -10rem;
+    padding: 1rem 1rem;
+    background-color: #ffffff;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.3);
+}
+
+.SignUpButton {
+    position: inherit;
+}
+
+/* comparisons */
+
+.ComparisonBase {
+    position: relative;
+    top: -2rem;
+    width: 100%;
+    display: grid;
+    padding-top: 2rem;
+    grid-template-columns: 23% repeat(2, minmax(33%, auto));
+    grid-template-rows: auto;
+    max-width: 100%;
+    background-color: white;
+}
+
+.ComparisonDescription {
+    margin: 10px;
+    padding: 10px;
+    line-height: auto;
+    font-family: 'Ubuntu Mono', monospace;
+    color: black;
+    align-self: center;
+    box-shadow: 1px 1px 1px 1px rgb(78, 78, 78);
+}
+
+.ComparisonDescription h1 {
+    font-size: larger;
+    text-shadow: 0px  1px 0px black;
+    text-decoration: underline;
+}
+
+.ComparisonContent {
+    width: 100%;
+    /* margin: 10px; */
+    display: inline-flex;
+    padding: 10px;
+}
+
+.ComparisonContentImage {
+    width: 100%;
+    box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
+}
+
+.ComparisonBase h2{
+    font-family: 'Ubuntu Mono', monospace;
+    position: inherit;
+}
 
 
+/* subsection */
 
 .SubsectionStyles {
   margin: 2rem 0;
@@ -166,4 +252,17 @@ margin-bottom: 1rem;
     padding: 0.5rem 1rem; 
     border-radius: 4px;
 }
+
+
+/*  general stuff */
+
+.FadeInTop {
+    background: linear-gradient(to bottom, #000105 30%, white 80%);
+    position: absolute;
+    top: -20rem;
+    height: 20rem;
+    width: 100%;
+    z-index: -100;
+}
+
 

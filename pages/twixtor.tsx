@@ -14,6 +14,26 @@ const TwixtorAI: React.FunctionComponent = () => {
     setIsActive(!isActive);
   };
 
+  
+  useEffect(() => {
+    const element1 = document.getElementById("sample1-img-1")
+    // console.log(element1);
+    
+    const element2 = document.getElementById("sample1-img-2")
+    // console.log(element2);
+    
+    const imageSync = setInterval(() => {
+    // const imageSync = setTimeout(() => {
+      element1.style.visibility = "hidden";
+      element2.style.visibility = "hidden";
+      element1.style.visibility = "visible";
+      element2.style.visibility = "visible";
+      // console.log(element1.style.visibility
+
+    }, 1000);
+  }, []);
+
+
   return (
     <div>
       <Head>
@@ -25,9 +45,13 @@ const TwixtorAI: React.FunctionComponent = () => {
         <link rel="preconnect" href="https://fonts.gstatic.com"></link>
         <link href="https://fonts.googleapis.com/css2?family=Fira+Mono:wght@700&family=Ubuntu+Mono&display=swap" rel="stylesheet"></link>
       </Head>
+
+      {/*  navbar   */}
       <nav className={mainstyle.NavbarStyles}>
         <div className={mainstyle.TwixtorIcon}>
-          <img src="/favicon.ico" height={50} alt="Twixtor.AI logo" />
+          <a href="/">
+            <img src="/favicon.ico" height={50} alt="Twixtor.AI logo" />
+          </a>
         </div>
         <div className={`${mainstyle.NavbarEndStyles} ${mainstyle.TwixtorText}`}>
           <a className={mainstyle.NavbarItemStyles} href="#">Home</a>
@@ -40,7 +64,9 @@ const TwixtorAI: React.FunctionComponent = () => {
           </a>
         </div>
       </nav>
+
       <main>
+        {/* main section -- the big boi awesome image */}
         <div className={mainstyle.TwixtorBackground}>
             {/* image */}
             <img src="background.gif" className={mainstyle.TwixtorBackgroundImage}/>
@@ -54,36 +80,93 @@ const TwixtorAI: React.FunctionComponent = () => {
               </h2>
             </div>
         </div>
+
+        {/* the 4 icon section */}
+
         <div className={mainstyle.ContentBase}>
             <div className={`${mainstyle.TwixtorText} ${styles.grid}`}>
                 <section className={`${mainstyle.SubsectionStyles} ${styles.card}`}>
                     <h2>Twixtor.AI</h2>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed auctor, magna id bibendum euismod, magna augue accumsan velit, vel auctor nibh velit vel velit. Sed id mauris at est egestas varius.</p>
+                    <p>A small program designed by two high school students! You input your video, we give you higher fps, slow-mo, interpolated...</p>
+                    <p><br></br></p>
+                    <p>(the list goes on)</p>
                 </section>
                 <section className={`${mainstyle.SubsectionStyles} ${styles.card}`}>
                     <h2>Who are we</h2>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed auctor, magna id bibendum euismod, magna augue accumsan velit, vel auctor nibh velit vel velit. Sed id mauris at est egestas varius.</p>
+                    <p>
+                      2 high school students passionate about the most random things ever :)
+                    </p>
                 </section>
                 <section className={`${mainstyle.SubsectionStyles} ${styles.card}`}>
                     <h2>How to use</h2>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed auctor, magna id bibendum euismod, magna augue accumsan velit, vel auctor nibh velit vel velit. Sed id mauris at est egestas varius.</p>
+                    <p>
+                      Click generate twixtor, upload your video, and wait for the magic to happen!
+                    </p>
                 </section>
                 <section className={`${mainstyle.SubsectionStyles} ${styles.card}`}>
                     <h2>Subscriptions</h2>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed auctor, magna id bibendum euismod, magna augue accumsan velit, vel auctor nibh velit vel velit. Sed id mauris at est egestas varius.</p>
+                    <p>
+                      yes so this exists too!
+                    </p>
                 </section>
             </div>
         </div>
-    </main>
-    <div>
-        <button classname={mainstyle.SignUpButton}>
-        Sign up
-        </button>
-      </div>
+
+
+        {/* background 2  + sample 1 comparison */}
+        <div className={`${mainstyle.PreSignUpMain}`}>
+          <section className={`${mainstyle.FadeInTop}`}/>
+          <div className={mainstyle.ComparisonBase}>
+            <div className={mainstyle.ComparisonDescription}>
+              <h1>This is a sample comparison:</h1>
+              <br></br>
+              <p>The left is the original gif</p>
+              <p>The right is the interpolated gif</p>
+            </div>
+            <div className={mainstyle.ComparisonContent}>
+              <img id="sample1-img-1" alt='Sample 1: Fox jumping into snow - initial' src="sample1.gif"
+                  className={mainstyle.ComparisonContentImage}></img>
+            </div>
+            <div className={mainstyle.ComparisonContent}>
+              <img id="sample1-img-2" alt='Sample 2: Fox jumping into snow - interpolated' src="sample1-result.gif"
+                  className={mainstyle.ComparisonContentImage}></img>
+            </div>
+            
+          </div>
+        </div>
+
+        {/* sign up */}
+        
+        <div className={mainstyle.SignUpBase}>
+          
+          <h2 className={`${mainstyle.TwixtorText} ${mainstyle.SignUpContent}`}>
+            Sign up for Twixtor.AI
+          </h2>
+          
+          <button className={mainstyle.SignUpButton}>
+            Sign up
+          </button>
+        </div>
+
+
+
+      </main>
     </div>
   );
 };
 
+
+
+
+TwixtorAI.getInitialProps = async (context) => {
+  // Fetch data here and return it as an object
+
+
+  return { context }
+}
+
+
 export default TwixtorAI;
+
 
 
