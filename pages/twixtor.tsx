@@ -1,5 +1,5 @@
 import Head from 'next/head';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 
 import styles from '../styles/Home.module.css'
 import mainstyle from '../styles/twixtor.module.css';
@@ -8,6 +8,12 @@ import mainstyle from '../styles/twixtor.module.css';
 
 const TwixtorAI: React.FunctionComponent = () => {
   const [isActive, setIsActive] = useState(false);
+
+  const generateTwixtor = () => {
+    console.log("running twxitor");
+    setIsActive(!isActive);
+  };
+
   return (
     <div>
       <Head>
@@ -24,7 +30,7 @@ const TwixtorAI: React.FunctionComponent = () => {
           <a className={mainstyle.NavbarItemStyles} href="#">Home</a>
           <a className={mainstyle.NavbarItemStyles} href="#">Sign in</a>
           <a className={mainstyle.NavbarItemStyles} href="#">Login</a>
-          <button className={mainstyle.NavbarItemStyles} onClick={() => setIsActive(!isActive)}>
+          <button className={mainstyle.NavbarItemStyles} onClick={() => {generateTwixtor();}}>
             Generate Twixtor
           </button>
         </div>
@@ -33,8 +39,14 @@ const TwixtorAI: React.FunctionComponent = () => {
         <div className={mainstyle.TwixtorBackground}>
             {/* image */}
             <img src="background.gif" className={mainstyle.TwixtorBackgroundImage}/>
+            {/* title for page */}
+            <div className={mainstyle.ContentGutterSpacing}>
+              <h1 className={`${mainstyle.TwixtorText} ${mainstyle.TwixtorTitle} ${mainstyle.TwixtorMainTitle}`}>Title</h1>
+              <h2 className={`${mainstyle.TwixtorText} ${mainstyle.TwixtorTitle} ${mainstyle.TwixtorMainDescriptionText}`}>
+                Welcome to the Twixtor.AI website. Here you can generate Twixtor images and videos.
+              </h2>
+            </div>
         </div>
-
         <div className={mainstyle.ContentBase}>
             <div className={`${mainstyle.TwixtorText} ${styles.grid}`}>
                 <section className={`${mainstyle.SubsectionStyles} ${styles.card}`}>

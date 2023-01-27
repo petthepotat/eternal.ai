@@ -56,6 +56,29 @@ align-items: center;
     font-family: 'Ubuntu Mono', monospace;
 }
 
+.TwixtorTitle {
+    margin: 10px 10px;
+    text-align: left;
+    padding: 1rem 1rem;
+    border: black;
+}
+
+.TwixtorMainTitle {
+    position: relative;
+    top: 150px;
+    left: 30px;
+    font-size: 50px;
+    text-shadow: white;
+}
+
+.TwixtorMainDescriptionText {
+    position: relative;
+    top: 150px;
+    left: 30px;
+    font-size: 20px;
+    text-shadow: 1px 1px rgb(255, 255, 255, 10);
+}
+
 .TwixtorIcon {
     width: 10rem;
 }
@@ -78,16 +101,38 @@ align-items: center;
 }
 
 /* The main section / content */
+.ContentGutterSpacing {
+    position: relative;
+    height: 400px;
+    top: -350px;
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0) 0%, rgb(0, 0, 0) 60%);
+}
+
 
 .ContentBase {
-    offset: 100 100;
+    position: relative;
+    top: -400px;
+    animation: card_scroll_up 20s cubic-bezier(0.1, 0.82, 0.9, 1);
 }
 
-.ContentData {
-    position: relative;
-    /* top: -200px; */
-    transform: translate(0, -100px);
+@keyframes card_scroll_up {
+    from {transform: translate(0, 200px);}
+    to {transform: translate(0, 0px);}
 }
+
+
+.ContentData {
+    
+}
+
+
+/* Section for media for content */
+
+@media (min-width: 600px) and (max-width: 1100px) {
+    
+}
+
+
 
 
 .SubsectionStyles {
@@ -100,10 +145,9 @@ margin-bottom: 1rem;
 }
 
 .SubsectionStyles.p {
-font-size: 1.5rem;
-line-height: 1.5;
+    font-size: 1.5rem;
+    line-height: 1.5;
 }
-
 
 .SignUpButton {
     background-color: #00FFFF; 
