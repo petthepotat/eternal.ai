@@ -149,18 +149,19 @@ const EternalAI: React.FunctionComponent = () => {
             {/*  grid */}
           <div className={`${mainstyle.SignUpContainer}`}>
             {/* row 1 */}
-            <span>
+            <div className={`${mainstyle.SignUpCard}`}>
+              <h1>Infant</h1>
+              <h2>ur bad and ur gae gimme $1 / day :0 it rhymes so its true</h2>
+            </div>
+            <div className={`${mainstyle.SignUpCard}`}>
               hello world
-            </span>
-            <span>
-              hellow part 2
-            </span>
-            <span>
-              text1
-            </span>
-            <span>
-              text 2
-            </span>
+            </div>
+            <div className={`${mainstyle.SignUpCard}`}>
+              hello world
+            </div>
+            <div className={`${mainstyle.SignUpCard}`}>
+              hello world
+            </div>
           </div>
 
           {/* row 2 -- outside of grid */}
