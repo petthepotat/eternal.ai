@@ -115,8 +115,8 @@ const EternalAI: React.FunctionComponent = () => {
             </div>
         </div>
 
-
         {/* background 2  + sample 1 comparison */}
+
         <div className={`${mainstyle.PreSignUpMain}`}>
           <section className={`${mainstyle.FadeInTop}`}/>
           <div className={mainstyle.ComparisonBase}>

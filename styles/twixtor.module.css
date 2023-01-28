@@ -1,7 +1,7 @@
 
 
 .Main {
-    height: 2000px;
+    height: 150rem;
     overflow: hidden;
 }
 
@@ -316,7 +316,7 @@ margin-bottom: 1rem;
     background: linear-gradient(to bottom, #000105 30%, white 80%);
     position: absolute;
     top: -20rem;
-    height: 20rem;
+    height: 19rem;
     width: 100%;
     z-index: -100;
 }
