@@ -2,9 +2,8 @@
 
 .Main {
     height: 2000px;
+    overflow: hidden;
 }
-
-
 
 .NavbarStyles{
     display: flex;
@@ -81,7 +80,7 @@
 .TwixtorMainTitle {
     position: relative;
     top: 150px;
-    left: 30px;
+    left: 5%;
     font-size: 50px;
     text-shadow: white;
     font-family: 'Fira Mono', monospace;
@@ -90,9 +89,11 @@
 .TwixtorMainDescriptionText {
     position: relative;
     top: 150px;
-    left: 30px;
+    display: flex;
+    justify-content: center;
     font-size: 20px;
     text-shadow: 1px 1px rgb(255, 255, 255, 10);
+    margin: auto;
 }
 
 .TwixtorIcon {
@@ -216,8 +217,8 @@
     font-size: larger;
     background: linear-gradient(to right, rgb(255, 99, 172) 0%, rgb(153, 206, 255) 100%);
     box-shadow: 1px 1px 1px white;
-    align-self: center;
     /* CENTER THE STUPID BUTTON */
+
 }
 
 .SignUpButton:hover {

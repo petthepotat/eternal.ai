@@ -160,17 +160,15 @@ const EternalAI: React.FunctionComponent = () => {
           </div>
 
           {/* row 2 -- outside of grid */}
-          <div className={mainstyle.SignUpButtonSection}>
-            <button id="sign-up-button" className={mainstyle.SignUpButton} onClick={() => {
+          <div className={`${mainstyle.SignUpButtonSection}`}>
+            <button id="sign-up-button" className={`${mainstyle.SignUpButton}`}
+                onClick={() => {
               console.log("someone wants to sign up!!!");
             }}>
               Sign up
             </button>
           </div>
-
-
         </div>
-
 
 
       </main>
