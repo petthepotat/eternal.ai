@@ -1,5 +1,17 @@
 
 
+
+/*  preprocessors % */
+
+.root {
+    --primary: rgb(255, 99, 172);
+    --secondary: rgb(255, 99, 172);
+}
+
+
+/*  classes  */
+
+
 .Main {
     height: 150rem;
     overflow: hidden;
@@ -197,6 +209,8 @@
 .SignUpButtonSection {
     position: relative;
     padding: 10px;
+    display: flex;
+    justify-content: center;
 }
 
 .SignUpContainer span {
@@ -210,8 +224,8 @@
     position: relative; 
     color: #000000; 
     padding: 0.5rem 1rem; 
-    height: 3rem;
-    width: 30%;
+    width: 40%;
+    height: 100px;
     border-radius: 4px;
     font-family: 'Ubuntu Mono', monospace;
     font-size: larger;
@@ -224,17 +238,26 @@
 .SignUpButton:hover {
     transform: translate(1px, -1%);
     color: white;
-    /* animation: slide-color 10s; */
+    background: linear-gradient(to right, rgb(255, 99, 172), rgb(153, 206, 255), rgb(255, 99, 172), rgb(153, 206, 255));
+    background-size: 400% 400%;
+    animation: slide-bg 10s ease-in-out infinite;
 }
 
-/* @keyframes sliding-color {
-    from {
-        background: linear-gradient(to right, rgb(255, 99, 172) 0%, rgb(153, 206, 255) 100%);
+.element {
+}
+
+@keyframes slide-bg {
+    0% {
+        background-position: 0% 50%;
     }
-    to {
-        background: linear-gradient(to right, rgb(255, 99, 172) 100%, rgb(153, 206, 255) 200%);
+    50% {
+        background-position: 100% 50%;
     }
-} */
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
 
 /* comparisons */
 

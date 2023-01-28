@@ -155,8 +155,12 @@ const EternalAI: React.FunctionComponent = () => {
             <span>
               hellow part 2
             </span>
-            <span></span>
-            <span></span>
+            <span>
+              text1
+            </span>
+            <span>
+              text 2
+            </span>
           </div>
 
           {/* row 2 -- outside of grid */}
