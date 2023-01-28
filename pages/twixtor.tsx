@@ -65,7 +65,9 @@ const EternalAI: React.FunctionComponent = () => {
         </div>
       </nav>
 
-      <main>
+        {/*  MAIN SECTION  */}
+      <main className={mainstyle.Main}>
+
         {/* main section -- the big boi awesome image */}
         <div className={mainstyle.TwixtorBackground}>
             {/* image */}
@@ -75,7 +77,8 @@ const EternalAI: React.FunctionComponent = () => {
               <h1 className={`${mainstyle.TwixtorText} ${mainstyle.TwixtorTitle} ${mainstyle.TwixtorMainTitle}`}>
                 Eternal.AI
               </h1>
-              <h2 className={`${mainstyle.TwixtorText} ${mainstyle.TwixtorTitle} ${mainstyle.TwixtorMainDescriptionText}`}>
+              <h2 className={`${mainstyle.TwixtorText} ${mainstyle.TwixtorTitle} ${mainstyle.TwixtorMainDescriptionText}`}
+                  style={{paddingLeft: `10%`}}>
                 Welcome to the Eternal.AI website. Here you can generate interpolated videos for your favorite clips!
               </h2>
             </div>
@@ -84,7 +87,7 @@ const EternalAI: React.FunctionComponent = () => {
         {/* the 4 icon section */}
 
         <div className={mainstyle.ContentBase}>
-            <div className={`${mainstyle.TwixtorText} ${styles.grid}`}>
+            <div className={`${mainstyle.TwixtorText} ${mainstyle.ContentGrid}`}>
                 <section className={`${mainstyle.SubsectionStyles} ${styles.card}`}>
                     <h2>Eternal.AI</h2>
                     <p>A small program designed by two high school students! You input your video, we give you higher fps, slow-mo, interpolated...</p>
@@ -142,10 +145,30 @@ const EternalAI: React.FunctionComponent = () => {
           <h2 className={`${mainstyle.TwixtorText} ${mainstyle.SignUpContent}`}>
             Sign up for an Eternal.AI subscription
           </h2>
-          
-          <button className={mainstyle.SignUpButton}>
-            Sign up
-          </button>
+
+            {/*  grid */}
+          <div className={`${mainstyle.SignUpContainer}`}>
+            {/* row 1 */}
+            <span>
+              hello world
+            </span>
+            <span>
+              hellow part 2
+            </span>
+            <span></span>
+            <span></span>
+          </div>
+
+          {/* row 2 -- outside of grid */}
+          <div className={mainstyle.SignUpButtonSection}>
+            <button id="sign-up-button" className={mainstyle.SignUpButton} onClick={() => {
+              console.log("someone wants to sign up!!!");
+            }}>
+              Sign up
+            </button>
+          </div>
+
+
         </div>
 
 
