@@ -1,5 +1,5 @@
 import Head from 'next/head';
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useRef} from 'react';
 
 import styles from '../styles/Home.module.css'
 import mainstyle from '../styles/twixtor.module.css';
@@ -14,23 +14,19 @@ const EternalAI: React.FunctionComponent = () => {
     setIsActive(!isActive);
   };
 
+  // sample 1 gifs
+  const sample1iref = useRef<HTMLImageElement>(null);
+  const sample1rref = useRef<HTMLImageElement>(null);
   
   useEffect(() => {
-    const element1 = document.getElementById("sample1-img-1")
-    // console.log(element1);
-    
-    const element2 = document.getElementById("sample1-img-2")
-    // console.log(element2);
     
     const imageSync = setInterval(() => {
     // const imageSync = setTimeout(() => {
-      element1.style.visibility = "hidden";
-      element2.style.visibility = "hidden";
-      element1.style.visibility = "visible";
-      element2.style.visibility = "visible";
-      // console.log(element1.style.visibility
-
-    }, 1000);
+      if(sample1iref.current && sample1rref.current) {
+        sample1iref.current.src = "/sample1.gif";
+        sample1rref.current.src = "/sample1-result.gif";
+      }
+    }, 2500);
   }, []);
 
 
@@ -127,11 +123,11 @@ const EternalAI: React.FunctionComponent = () => {
               <p>The right is the interpolated gif</p>
             </div>
             <div className={mainstyle.ComparisonContent}>
-              <img id="sample1-img-1" alt='Sample 1: Fox jumping into snow - initial' src="sample1.gif"
+              <img ref={sample1iref} id="sample1-img-1" alt='Sample 1: Fox jumping into snow - initial' src="sample1.gif"
                   className={mainstyle.ComparisonContentImage}></img>
             </div>
             <div className={mainstyle.ComparisonContent}>
-              <img id="sample1-img-2" alt='Sample 2: Fox jumping into snow - interpolated' src="sample1-result.gif"
+              <img ref={sample1rref} id="sample1-img-2" alt='Sample 2: Fox jumping into snow - interpolated' src="sample1-result.gif"
                   className={mainstyle.ComparisonContentImage}></img>
             </div>
             
