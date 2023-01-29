@@ -50,7 +50,7 @@ const EternalAI: React.FunctionComponent = () => {
         <div className={`${mainstyle.NavbarEndStyles} ${mainstyle.TwixtorText}`}>
           <a className={mainstyle.NavbarItemStyles} href="./eternal">Home</a>
           <a className={mainstyle.NavbarItemStyles} href="#">Sign in</a>
-          <a className={mainstyle.NavbarItemStyles} href="#">Login</a>
+          <a className={mainstyle.NavbarItemStyles} href="./login">Login</a>
           <a className={mainstyle.NavbarItemStyles} href="#">
             <button className={`${mainstyle.NavbarButton} ${mainstyle.TwixtorText}`} onClick={() => {generateTwixtor();}}>
             Generate Eternal
