@@ -48,7 +48,7 @@ const EternalAI: React.FunctionComponent = () => {
           </a>
         </div>
         <div className={`${mainstyle.NavbarEndStyles} ${mainstyle.TwixtorText}`}>
-          <a className={mainstyle.NavbarItemStyles} href="#">Home</a>
+          <a className={mainstyle.NavbarItemStyles} href="./eternal">Home</a>
           <a className={mainstyle.NavbarItemStyles} href="#">Sign in</a>
           <a className={mainstyle.NavbarItemStyles} href="#">Login</a>
           <a className={mainstyle.NavbarItemStyles} href="#">
@@ -79,7 +79,6 @@ const EternalAI: React.FunctionComponent = () => {
         </div>
 
         {/* the 4 icon section */}
-
         <div className={mainstyle.ContentBase}>
             <div className={`${mainstyle.TwixtorText} ${mainstyle.ContentGrid}`}>
                 <section className={`${mainstyle.SubsectionStyles} ${styles.card}`}>
