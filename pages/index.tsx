@@ -9,14 +9,14 @@ export default function Home() {
   return (
     <>
       <Head>
-        <title>twixtor.ai</title>
+        <title>eternal.ai</title>
         <meta name="description" content="ai for generating twixtor clips" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <main className={styles.main}>
         <div className={styles.description}>
-          <p className={inter.className}><code>Welcome to <b><u>Twixtor.AI</u></b></code></p>
+          <p className={inter.className}><code>Welcome to <b><u>Eternal.AI</u></b></code></p>
         </div>
 
         <div className={styles.center}>
@@ -41,7 +41,7 @@ export default function Home() {
 
         <div className={styles.grid}>
           <a
-            href="../twixtor"
+            href="../eternal"
             className={styles.card}
             target="_blank"
             rel="noopener noreferrer"
