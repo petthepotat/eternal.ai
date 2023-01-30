@@ -4,16 +4,18 @@ import { useState, useEffect, useRef} from 'react';
 import styles from '../styles/Home.module.css'
 import mainstyle from '../styles/twixtor.module.css';
 
+// import * as login from './login';
+import lstyle from '../styles/login.module.css';
 
 
 const EternalAI: React.FunctionComponent = () => {
   const [isActive, setIsActive] = useState(false);
-
+  
   const generateTwixtor = () => {
     console.log("running twxitor");
     setIsActive(!isActive);
   };
-
+  
   // sample 1 gifs
   const sample1iref = useRef<HTMLImageElement>(null);
   const sample1rref = useRef<HTMLImageElement>(null);
@@ -21,23 +23,59 @@ const EternalAI: React.FunctionComponent = () => {
   useEffect(() => {
     
     const imageSync = setInterval(() => {
-    // const imageSync = setTimeout(() => {
-      if(sample1iref.current && sample1rref.current) {
-        sample1iref.current.src = "/sample1.gif";
-        sample1rref.current.src = "/sample1-result.gif";
-      }
-    }, 2500);
-  }, []);
+      // const imageSync = setTimeout(() => {
+        if(sample1iref.current && sample1rref.current) {
+          sample1iref.current.src = "/sample1.gif";
+          sample1rref.current.src = "/sample1-result.gif";
+        }
+      }, 2500);
+    }, []);
+  
+  // for login overlay
+  const [showOverlay, setShowOverlay] = useState(false);
 
+  const handleGoogleLogin = () => {
+    console.log("google login");
+  };
+
+  const loginOverlayRef = useRef(null);
+
+  useEffect(() => {
+    const handleClickOutside = (event) => {
+      if(!showOverlay || !loginOverlayRef.current) return;
+      
+      if(!loginOverlayRef.current.contains(event.target)) {
+        setShowOverlay(false);
+        console.log("closing overlay");
+        return;
+      }
+
+      console.log("overlay is open");
+      console.log(showOverlay);
+      // if (showOverlay && loginOverlayRef.current && !loginOverlayRef.current.contains(event.target)) {
+      //   setShowOverlay(false);
+      //   console.log('closing overlay');
+      // } else if (showOverlay && loginOverlayRef.current && loginOverlayRef.current.contains(event.target)) 
+      // {
+      //   console.log('inside overlay');
+      // }
+    };
+
+    document.addEventListener("click", handleClickOutside);
+
+    return () => {
+      document.removeEventListener("click", handleClickOutside);
+    };
+  }, [loginOverlayRef]);
+
+
+
+  //  end of login overlay
 
   return (
     <div>
       <Head>
-        <title>Eternal.AI</title>
-        <link rel="preconnect" href="https://fonts.googleapis.com"></link>
-        <link rel="preconnect" href="https://fonts.gstatic.com"></link>
-        <link href="https://fonts.googleapis.com/css2?family=Ubuntu+Mono&display=swap" rel="stylesheet"></link>
-        <link href="https://fonts.googleapis.com/css2?family=Fira+Mono:wght@700&family=Ubuntu+Mono&display=swap" rel="stylesheet"></link>
+        <title>eternal.ai - home</title>
       </Head>
 
       {/*  navbar   */}
@@ -48,19 +86,40 @@ const EternalAI: React.FunctionComponent = () => {
           </a>
         </div>
         <div className={`${mainstyle.NavbarEndStyles} ${mainstyle.TwixtorText}`}>
-          <a className={mainstyle.NavbarItemStyles} href="./eternal">Home</a>
-          <a className={mainstyle.NavbarItemStyles} href="#">Sign in</a>
-          <a className={mainstyle.NavbarItemStyles} href="./login">Login</a>
+          <a className={mainstyle.NavbarItemStyles} href="./eternal">home</a>
+          <a className={mainstyle.NavbarItemStyles} href="#" 
+              onClick={ (e) => {
+                e.preventDefault();
+                setShowOverlay(true);
+                console.log("opening overlay");
+              }}>
+              sign in
+          </a>
+          <a className={mainstyle.NavbarItemStyles} href="#">login</a>
           <a className={mainstyle.NavbarItemStyles} href="#">
-            <button className={`${mainstyle.NavbarButton} ${mainstyle.TwixtorText}`} onClick={() => {generateTwixtor();}}>
-            Generate Eternal
-          </button>
+            <button className={`${mainstyle.NavbarEndStylesButton} ${mainstyle.TwixtorText}`} onClick={() => {generateTwixtor();}}>
+              generate eternal
+            </button>
           </a>
         </div>
       </nav>
 
-        {/*  MAIN SECTION  */}
+      {/*  MAIN SECTION  */}
       <main className={mainstyle.Main}>
+        {/*  login overlay section   */}
+        {
+          // showOverlay && <EternalLogin/>
+          showOverlay && (
+            <div className={lstyle.LoginOverlay}>
+              <div ref={loginOverlayRef} className={lstyle.LoginContainer}>
+                  <form className="login-form">
+                      <h1>Login</h1>
+                      <button onClick={handleGoogleLogin}>Sign in with Google</button>
+                  </form>
+              </div>
+            </div>
+          )
+        }
 
         {/* main section -- the big boi awesome image */}
         <div className={mainstyle.TwixtorBackground}>
@@ -69,7 +128,7 @@ const EternalAI: React.FunctionComponent = () => {
             {/* title for page */}
             <div className={mainstyle.ContentGutterSpacing}>
               <h1 className={`${mainstyle.TwixtorText} ${mainstyle.TwixtorTitle} ${mainstyle.TwixtorMainTitle}`}>
-                Eternal.AI
+                ETERNAL.AI
               </h1>
               <h2 className={`${mainstyle.TwixtorText} ${mainstyle.TwixtorTitle} ${mainstyle.TwixtorMainDescriptionText}`}
                   style={{paddingLeft: `10%`}}>
@@ -82,7 +141,7 @@ const EternalAI: React.FunctionComponent = () => {
         <div className={mainstyle.ContentBase}>
             <div className={`${mainstyle.TwixtorText} ${mainstyle.ContentGrid}`}>
                 <section className={`${mainstyle.SubsectionStyles} ${styles.card}`}>
-                    <h2>Eternal.AI</h2>
+                    <h2>eternal.ai</h2>
                     <p>A small program designed by two high school students! You input your video, we give you higher fps, slow-mo, interpolated...</p>
                     <p><br></br></p>
                     <p>(the list goes on)</p>

@@ -4,7 +4,7 @@ import Head from 'next/head'
 
 export default function App({ Component, pageProps }: AppProps) {
   return (
-    <div>
+    <>
       <Head>
         <title>eternal.ai</title>
         <meta name="description" content="ai for generating twixtor clips" />
@@ -12,6 +12,6 @@ export default function App({ Component, pageProps }: AppProps) {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <Component {...pageProps} />
-    </div>
+    </>
   )
 }

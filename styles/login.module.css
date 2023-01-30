@@ -1,0 +1,34 @@
+.LoginOverlay {
+    position: fixed;
+    /* top: 50%; */
+    /* left: 50%; */
+    /* transform: translate(-50%, -50%); */
+    /* width: 20rem; */
+    width: 100%;
+    height: 100%;
+    top: 0;
+
+    background: rgba(0, 0, 0, 0.5);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    visibility: visible;
+    opacity: 100%;
+    z-index: 35;
+}
+
+.LoginContainer {
+    position: relative;
+    width: 80%;
+    height: 90%;
+    background-color: white;
+    color: black;
+    padding: 2rem;
+    border-radius: 10px;
+    z-index: inherit;
+}
+
+.LoginContainer h {
+    color: black;
+}
