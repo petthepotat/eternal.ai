@@ -389,7 +389,7 @@ margin-bottom: 1rem;
 
 
 
-@media (min-width: 600px) and (max-width: 1280px) {
+@media (min-width: 600px) and (max-width: 1000px) {
     .TwixtorTitle{
         margin: 1%;
     }
@@ -409,6 +409,10 @@ margin-bottom: 1rem;
         background: rgba(var(--card-rgb), 0);
         border: 1px solid rgba(var(--card-border-rgb), 0);
         transition: background 200ms, border 200ms;
+    }
+
+    .TwixtorContentGrid {
+        grid-template-columns: 1fr 1fr;
     }
 
     /* content  */
