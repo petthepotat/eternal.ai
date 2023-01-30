@@ -31,43 +31,15 @@ const EternalAI: React.FunctionComponent = () => {
       }, 2500);
     }, []);
   
+
   // for login overlay
-  const [showOverlay, setShowOverlay] = useState(false);
-
-  const handleGoogleLogin = () => {
-    console.log("google login");
-  };
-
+  const [loginOverlay, setLoginOverlay] = useState(false);
   const loginOverlayRef = useRef(null);
 
-  useEffect(() => {
-    const handleClickOutside = (event) => {
-      if(!showOverlay || !loginOverlayRef.current) return;
-      
-      if(!loginOverlayRef.current.contains(event.target)) {
-        setShowOverlay(false);
-        console.log("closing overlay");
-        return;
-      }
-
-      console.log("overlay is open");
-      console.log(showOverlay);
-      // if (showOverlay && loginOverlayRef.current && !loginOverlayRef.current.contains(event.target)) {
-      //   setShowOverlay(false);
-      //   console.log('closing overlay');
-      // } else if (showOverlay && loginOverlayRef.current && loginOverlayRef.current.contains(event.target)) 
-      // {
-      //   console.log('inside overlay');
-      // }
-    };
-
-    document.addEventListener("click", handleClickOutside);
-
-    return () => {
-      document.removeEventListener("click", handleClickOutside);
-    };
-  }, [loginOverlayRef]);
-
+  const handleGoogleLogin = (e) => {
+    e.preventDefault();
+    console.log("google login");
+  };
 
 
   //  end of login overlay
@@ -87,12 +59,13 @@ const EternalAI: React.FunctionComponent = () => {
         </div>
         <div className={`${mainstyle.NavbarEndStyles} ${mainstyle.TwixtorText}`}>
           <a className={mainstyle.NavbarItemStyles} href="./eternal">home</a>
-          <a className={mainstyle.NavbarItemStyles} href="#" 
-              onClick={ (e) => {
-                e.preventDefault();
-                setShowOverlay(true);
-                console.log("opening overlay");
-              }}>
+          <a className={mainstyle.NavbarItemStyles} href="#"
+              onClick={
+                (e) => {
+                  e.preventDefault();
+                  setLoginOverlay(true);
+                }
+              }>
               sign in
           </a>
           <a className={mainstyle.NavbarItemStyles} href="#">login</a>
@@ -109,12 +82,22 @@ const EternalAI: React.FunctionComponent = () => {
         {/*  login overlay section   */}
         {
           // showOverlay && <EternalLogin/>
-          showOverlay && (
-            <div className={lstyle.LoginOverlay}>
+          loginOverlay && (
+            <div className={lstyle.LoginOverlay}
+              onClick={
+                (e) => {
+                  if (loginOverlayRef.current && !loginOverlayRef.current.contains(e.target)) {
+                    console.log("clicked overlay");
+                    setLoginOverlay(false);
+                  }
+                }
+              }>
               <div ref={loginOverlayRef} className={lstyle.LoginContainer}>
                   <form className="login-form">
                       <h1>Login</h1>
-                      <button onClick={handleGoogleLogin}>Sign in with Google</button>
+                      <button onClick={handleGoogleLogin}>
+                        Sign in with Google
+                      </button>
                   </form>
               </div>
             </div>
