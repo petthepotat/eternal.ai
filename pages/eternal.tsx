@@ -122,7 +122,7 @@ const EternalAI: React.FunctionComponent = () => {
 
         {/* the 4 icon section */}
         <div className={mainstyle.ContentBase}>
-            <div className={`${mainstyle.TwixtorText} ${mainstyle.ContentGrid}`}>
+            <div className={`${mainstyle.TwixtorText} ${mainstyle.TwixtorContentGrid}`}>
                 <section className={`${mainstyle.SubsectionStyles} ${styles.card}`}>
                     <h2>eternal.ai</h2>
                     <p>A small program designed by two high school students! You input your video, we give you higher fps, slow-mo, interpolated...</p>
@@ -161,15 +161,16 @@ const EternalAI: React.FunctionComponent = () => {
               <p>The left is the original gif</p>
               <p>The right is the interpolated gif</p>
             </div>
-            <div className={mainstyle.ComparisonContent}>
-              <img ref={sample1iref} id="sample1-img-1" alt='Sample 1: Fox jumping into snow - initial' src="sample1.gif"
-                  className={mainstyle.ComparisonContentImage}></img>
+            <div className={mainstyle.ContentComparisonContainer}>
+              <div className={mainstyle.ComparisonContent}>
+                <img ref={sample1iref} id="sample1-img-1" alt='Sample 1: Fox jumping into snow - initial' src="sample1.gif"
+                    className={mainstyle.ComparisonContentImage}></img>
+              </div>
+              <div className={mainstyle.ComparisonContent}>
+                <img ref={sample1rref} id="sample1-img-2" alt='Sample 2: Fox jumping into snow - interpolated' src="sample1-result.gif"
+                    className={mainstyle.ComparisonContentImage}></img>
+              </div>
             </div>
-            <div className={mainstyle.ComparisonContent}>
-              <img ref={sample1rref} id="sample1-img-2" alt='Sample 2: Fox jumping into snow - interpolated' src="sample1-result.gif"
-                  className={mainstyle.ComparisonContentImage}></img>
-            </div>
-            
           </div>
         </div>
 
